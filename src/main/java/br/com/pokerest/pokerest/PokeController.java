@@ -32,4 +32,10 @@ public class PokeController {
 
     @GetMapping("/types/statistics")
     public Statistics getMultipleTypeStatistics() { return new Statistics(); }
+
+    @GetMapping("/glassCannons/")
+    public List<Pokemon> getGlassCannons() { return new ArrayList<>(); }
+
+    @GetMapping("/allFromGeneration/{generation_number}")
+    public List<Pokemon> getAllFromGeneration() { return new ArrayList<>(); }
 }

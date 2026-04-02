@@ -65,5 +65,6 @@ defense_lt → defesa menor que
 - Spring Boot `org.springframework.boot:spring-boot-starter-webmvc:4.0.5`
 - Spring Web `org.springframework:spring-web:7.0.6`, `org.springframework:spring-webmvc:7.0.6`
 - Validator `org.hibernate.validator:hibernate-validator:9.0.1.Final` com `jakarta.validation:jakarta.validation-api:3.1.1`
+- OpenCSV `com.opencsv:opencsv:jar:5.9:compile`
 
 ## Deploy

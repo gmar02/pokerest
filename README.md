@@ -8,6 +8,53 @@ API REST para análise avançada de estatísticas de Pokémon, voltada para joga
   <strong>Nota:</strong> Projeto em desenvolvimento.
 </div>
 
+## Dados Suportados
+
+```JS
+{
+    "id",                 // Numeração na Pokedex
+    "name",               // Nome do Pokémon
+    "jp_name",            // Nome do Pokémon em Japonês
+    "class",              // Classificação do Pokémon
+    "gen_num",            // Número da Geração
+    "hp",                 // Quantidade de Hit Points
+    "attack",             // Quantidade de Ataque
+    "defense",            // Quantidade de Defesa
+    "sp_attack",          // Quantidade de Ataque Especial
+    "sp_defense",         // Quantidade de Defesa Especial
+    "speed",              // Quantidade de Velocidade
+    "type_1",             // Tipo principal
+    "type_2",             // Tipo secundário - caso exista
+    "is_legendary",       // Lendário?
+    "abilities"           // Lista de habilidades possíveis
+}
+```
+
+Exemplo de retorno:
+
+```JSON
+{
+  "id": 1,
+  "name": "Bulbasaur",
+  "jp_name": "Fushigidane",
+  "class": "Seed Pokémon",
+  "gen_num": 1,
+  "hp": 45,
+  "attack": 49,
+  "defense": 49,
+  "sp_attack": 65,
+  "sp_defense": 65,
+  "speed": 45,
+  "type_1": "grass",
+  "type_2": "poison",
+  "is_legendary": false,
+  "abilities": [
+    "Overgrow",
+    "Chlorophyll"
+  ]
+}
+```
+
 ## Endpoints
 
 ### Buscar Pokémon por Nome
@@ -66,5 +113,6 @@ defense_lt → defesa menor que
 - Spring Web `org.springframework:spring-web:7.0.6`, `org.springframework:spring-webmvc:7.0.6`
 - Validator `org.hibernate.validator:hibernate-validator:9.0.1.Final` com `jakarta.validation:jakarta.validation-api:3.1.1`
 - OpenCSV `com.opencsv:opencsv:jar:5.9:compile`
+- Lombok `org.projectlombok:lombok:jar:1.18.32:provided`
 
 ## Deploy

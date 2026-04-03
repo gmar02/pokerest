@@ -6,6 +6,7 @@ import org.springframework.stereotype.Repository;
 import jakarta.annotation.PostConstruct;
 import java.io.InputStreamReader;
 import java.util.List;
+import java.util.Optional;
 
 @Repository
 public class PokemonRepository {
@@ -26,11 +27,11 @@ public class PokemonRepository {
         return pokemons;
     }
 
-    // public Optional<Pokemon> findByName(String name) {
-    //     return pokemons.stream()
-    //             .filter(p -> p.getName().equalsIgnoreCase(name))
-    //             .findFirst();
-    // }
+    public Optional<Pokemon> findByName(String name) {
+        return pokemons.stream()
+                .filter(p -> p.getName().equalsIgnoreCase(name))
+                .findFirst();
+    }
 
     // public List<Pokemon> findByGeneration(int generation) {
     //     return pokemons.stream()

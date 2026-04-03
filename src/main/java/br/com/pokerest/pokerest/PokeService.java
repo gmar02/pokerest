@@ -10,8 +10,9 @@ public class PokeService {
     
     private final PokemonRepository pokemonRepository;
 
-    public Pokemon findFirst() {
-        return pokemonRepository.findAll().get(0);
+    public Pokemon findByName(String name) {
+        return pokemonRepository.findByName(name)
+            .orElseThrow(() -> new RuntimeException("Pokémon not found"));
     }
 
 }

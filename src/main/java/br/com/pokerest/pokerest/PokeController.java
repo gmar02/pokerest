@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -17,13 +18,10 @@ public class PokeController {
     
     private final PokeService service;
 
-    @GetMapping("/teste/")
-    public Pokemon getAll() {
-        return service.findFirst();
-    }
-
     @GetMapping("/pokemons/{name}")
-    public Pokemon getByName() { return new Pokemon(); }
+    public Pokemon getByName(@PathVariable("name") String name) { 
+        return service.findByName(name);
+    }
 
     @GetMapping("/pokemons")
     public List<Pokemon> getPokemons() { return new ArrayList<>(); }

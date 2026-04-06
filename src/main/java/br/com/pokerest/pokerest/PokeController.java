@@ -28,6 +28,11 @@ public class PokeController {
         return service.generateRandomTeam(); 
     }
 
+    @GetMapping("/allFromGeneration/{generation_number}")
+    public List<Pokemon> getAllFromGeneration(@PathVariable("generation_number") Integer generationNumber) { 
+        return service.getGeneration(generationNumber);
+    }
+
     @GetMapping("/types/{type}/statistics")
     public Statistics getTypeStatistics() { return new Statistics(); }
 
@@ -37,6 +42,4 @@ public class PokeController {
     @GetMapping("/glassCannons/")
     public List<Pokemon> getGlassCannons() { return new ArrayList<>(); }
 
-    @GetMapping("/allFromGeneration/{generation_number}")
-    public List<Pokemon> getAllFromGeneration() { return new ArrayList<>(); }
 }

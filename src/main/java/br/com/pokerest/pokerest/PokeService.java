@@ -22,5 +22,9 @@ public class PokeService {
             .orElseThrow(() -> new RuntimeException("Couldn't generate a team."));
     }
 
+    public List<Pokemon> getGeneration(Integer generationNumber) {
+        return pokemonRepository.findAllByGeneration(generationNumber)
+            .orElseThrow(() -> new RuntimeException("Couldn't retrive pokemons from generation"));
+    }
 
 }

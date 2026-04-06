@@ -46,9 +46,16 @@ public class PokemonRepository {
         return Optional.of(randomTeam);
     }
 
-    // public List<Pokemon> findByGeneration(int generation) {
-    //     return pokemons.stream()
-    //             .filter(p -> p.getGeneration() == generation)
-    //             .toList();
-    // }
+    public Optional<List<Pokemon>> findAllByGeneration(int generation) {
+        
+        if (generation < 1 || generation > 7)
+            return Optional.empty();
+        
+        List<Pokemon> allFromGeneration = pokemons.stream()
+                .filter(p -> p.getGeneration() == generation)
+                .toList();
+
+        return Optional.of(allFromGeneration);
+    }
+
 }

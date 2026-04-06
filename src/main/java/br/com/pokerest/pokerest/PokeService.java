@@ -1,5 +1,7 @@
 package br.com.pokerest.pokerest;
 
+import java.util.List;
+
 import org.springframework.stereotype.Service;
 
 import lombok.RequiredArgsConstructor;
@@ -14,5 +16,11 @@ public class PokeService {
         return pokemonRepository.findByName(name)
             .orElseThrow(() -> new RuntimeException("Pokémon not found"));
     }
+
+    public List<Pokemon> generateRandomTeam() {
+        return pokemonRepository.pullRandomTeam(6)
+            .orElseThrow(() -> new RuntimeException("Couldn't generate a team."));
+    }
+
 
 }

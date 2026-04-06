@@ -7,6 +7,7 @@ import jakarta.annotation.PostConstruct;
 import java.io.InputStreamReader;
 import java.util.List;
 import java.util.Optional;
+import java.util.Random;
 
 @Repository
 public class PokemonRepository {
@@ -31,6 +32,18 @@ public class PokemonRepository {
         return pokemons.stream()
                 .filter(p -> p.getName().equalsIgnoreCase(name))
                 .findFirst();
+    }
+
+    public Optional<List<Pokemon>> pullRandomTeam(Integer teamSize) {
+        
+        if (teamSize <= 0)
+            return Optional.empty();
+        
+        List<Pokemon> randomTeam = new Random().ints(teamSize, 0, pokemons.size())
+            .mapToObj(pokemons::get)
+            .toList();
+
+        return Optional.of(randomTeam);
     }
 
     // public List<Pokemon> findByGeneration(int generation) {

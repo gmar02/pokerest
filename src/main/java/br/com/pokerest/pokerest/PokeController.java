@@ -23,11 +23,10 @@ public class PokeController {
         return service.findByName(name);
     }
 
-    @GetMapping("/pokemons")
-    public List<Pokemon> getPokemons() { return new ArrayList<>(); }
-
     @GetMapping("/teams/random")
-    public Team getRandomTeam() { return new Team(); }
+    public List<Pokemon> getRandomTeam() { 
+        return service.generateRandomTeam(); 
+    }
 
     @GetMapping("/types/{type}/statistics")
     public Statistics getTypeStatistics() { return new Statistics(); }

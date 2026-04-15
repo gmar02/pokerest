@@ -21,3 +21,8 @@ Para mais informações sobre endpoints, campos e exemplos de retorno, ler `DOC.
 - Lombok `org.projectlombok:lombok:jar:1.18.32:provided`
 
 ## Deploy
+
+O dataset utilizado com os dados dos Pokémons está disponível em <a href="https://www.kaggle.com/datasets/rounakbanik/pokemon">https://www.kaggle.com/datasets/rounakbanik/pokemon</a>. 
+
+O arquivo `pokemon.csv` deve estar localizado em `pokerest.src.main.resources`.
+

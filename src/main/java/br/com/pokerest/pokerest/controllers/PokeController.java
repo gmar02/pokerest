@@ -1,4 +1,4 @@
-package br.com.pokerest.pokerest;
+package br.com.pokerest.pokerest.controllers;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -8,6 +8,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import br.com.pokerest.pokerest.dtos.Pokemon;
+import br.com.pokerest.pokerest.dtos.Statistics;
+import br.com.pokerest.pokerest.services.PokeService;
 import lombok.RequiredArgsConstructor;
 
 

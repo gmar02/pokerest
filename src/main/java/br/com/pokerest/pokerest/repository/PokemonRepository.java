@@ -1,6 +1,9 @@
-package br.com.pokerest.pokerest;
+package br.com.pokerest.pokerest.repository;
 
 import com.opencsv.bean.CsvToBeanBuilder;
+
+import br.com.pokerest.pokerest.dtos.Pokemon;
+
 import org.springframework.stereotype.Repository;
 
 import jakarta.annotation.PostConstruct;

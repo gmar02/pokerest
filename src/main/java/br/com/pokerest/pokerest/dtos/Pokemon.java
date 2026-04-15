@@ -1,10 +1,12 @@
-package br.com.pokerest.pokerest;
+package br.com.pokerest.pokerest.dtos;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.opencsv.bean.CsvBindByName;
 import com.opencsv.bean.CsvCustomBindByName;
 
+import br.com.pokerest.pokerest.converters.AbilitiesConverter;
+import br.com.pokerest.pokerest.converters.LegendaryConverter;
 import lombok.Getter;
 
 import java.util.List;

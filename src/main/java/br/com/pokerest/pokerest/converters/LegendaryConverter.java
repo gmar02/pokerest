@@ -1,4 +1,4 @@
-package br.com.pokerest.pokerest;
+package br.com.pokerest.pokerest.converters;
 
 import com.opencsv.bean.AbstractBeanField;
 

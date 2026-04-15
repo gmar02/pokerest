@@ -1,4 +1,4 @@
-package br.com.pokerest.pokerest;
+package br.com.pokerest.pokerest.handlers;
 
 import java.util.HashMap;
 import java.util.Map;

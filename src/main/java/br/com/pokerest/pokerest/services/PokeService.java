@@ -1,9 +1,11 @@
-package br.com.pokerest.pokerest;
+package br.com.pokerest.pokerest.services;
 
 import java.util.List;
 
 import org.springframework.stereotype.Service;
 
+import br.com.pokerest.pokerest.dtos.Pokemon;
+import br.com.pokerest.pokerest.repository.PokemonRepository;
 import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor

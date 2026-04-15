@@ -23,23 +23,20 @@ public class PokeController {
         return service.findByName(name);
     }
 
+    @GetMapping("/pokemons/generation/{generation_number}")
+    public List<Pokemon> getAllFromGeneration(@PathVariable("generation_number") Integer generationNumber) { 
+        return service.getGeneration(generationNumber);
+    }
+
+    @GetMapping("/pokemons/glassCannons/")
+    public List<Pokemon> getGlassCannons() { return new ArrayList<>(); }
+
     @GetMapping("/teams/random")
     public List<Pokemon> getRandomTeam() { 
         return service.generateRandomTeam(); 
     }
 
-    @GetMapping("/allFromGeneration/{generation_number}")
-    public List<Pokemon> getAllFromGeneration(@PathVariable("generation_number") Integer generationNumber) { 
-        return service.getGeneration(generationNumber);
-    }
-
-    @GetMapping("/types/{type}/statistics")
-    public Statistics getTypeStatistics() { return new Statistics(); }
-
     @GetMapping("/types/statistics")
-    public Statistics getMultipleTypeStatistics() { return new Statistics(); }
-
-    @GetMapping("/glassCannons/")
-    public List<Pokemon> getGlassCannons() { return new ArrayList<>(); }
+    public List<Statistics> getMultipleTypeStatistics() { return new ArrayList<>(); }
 
 }

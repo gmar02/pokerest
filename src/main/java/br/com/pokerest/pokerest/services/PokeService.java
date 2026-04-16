@@ -1,5 +1,6 @@
 package br.com.pokerest.pokerest.services;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
@@ -11,7 +12,10 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 @Service
 public class PokeService {
-    
+
+    private final Integer ATTACK_THRESHOLD = 130; // attack minimal bound
+    private final Integer DEFENSE_THRESHOLD = 80; // defense higher bound
+
     private final PokemonRepository pokemonRepository;
 
     public Pokemon findByName(String name) {
@@ -28,5 +32,13 @@ public class PokeService {
         return pokemonRepository.findAllByGeneration(generationNumber)
             .orElseThrow(() -> new RuntimeException("Couldn't retrive pokemons from generation"));
     }
+
+    public List<Pokemon> getGlassCannons(Integer attackGreaterThan, Integer defenseLowerThan) {
+        int atk = (attackGreaterThan != null) ? attackGreaterThan : ATTACK_THRESHOLD;
+        int def = (defenseLowerThan != null) ? defenseLowerThan : DEFENSE_THRESHOLD;     
+        return pokemonRepository.findAllWithinBounds(atk, def)
+                .orElseThrow(() -> new RuntimeException("Couldn't find glass cannons within bounds."));
+    }
+
 
 }

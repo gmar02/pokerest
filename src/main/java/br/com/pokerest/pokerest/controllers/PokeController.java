@@ -6,6 +6,7 @@ import java.util.List;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.com.pokerest.pokerest.dtos.Pokemon;
@@ -32,7 +33,10 @@ public class PokeController {
     }
 
     @GetMapping("/pokemons/glassCannons/")
-    public List<Pokemon> getGlassCannons() { return new ArrayList<>(); }
+    public List<Pokemon> getGlassCannons(@RequestParam(name = "atk_gt", required = false) Integer attackGreaterThan, 
+                                         @RequestParam(name = "df_lt", required = false) Integer defenseLowerThan) {
+        return service.getGlassCannons(attackGreaterThan, defenseLowerThan);
+    }
 
     @GetMapping("/teams/random")
     public List<Pokemon> getRandomTeam() { 

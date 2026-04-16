@@ -61,4 +61,13 @@ public class PokemonRepository {
         return Optional.of(allFromGeneration);
     }
 
+    public Optional<List<Pokemon>> findAllWithinBounds(Integer attackThreshold, Integer defenseThreshold) {
+
+        List<Pokemon> withinBounds = pokemons.stream()
+                .filter(p -> p.getAttack() > attackThreshold && p.getDefense() < defenseThreshold)
+                .toList(); 
+
+        return Optional.of(withinBounds);
+    }
+
 }

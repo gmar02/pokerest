@@ -1,6 +1,5 @@
 package br.com.pokerest.pokerest.controllers;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,7 +12,6 @@ import br.com.pokerest.pokerest.dtos.Pokemon;
 import br.com.pokerest.pokerest.dtos.Statistics;
 import br.com.pokerest.pokerest.services.PokeService;
 import lombok.RequiredArgsConstructor;
-
 
 @RequiredArgsConstructor
 @RestController
@@ -44,6 +42,9 @@ public class PokeController {
     }
 
     @GetMapping("/types/statistics")
-    public List<Statistics> getMultipleTypeStatistics() { return new ArrayList<>(); }
+    public Statistics getMultipleTypeStatistics(
+            @RequestParam(name="types", required = true) List<String> types) {
+         return service.getStatistics(types); 
+    }
 
 }

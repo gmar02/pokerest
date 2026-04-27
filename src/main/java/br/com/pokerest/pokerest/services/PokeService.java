@@ -1,11 +1,11 @@
 package br.com.pokerest.pokerest.services;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
 
 import br.com.pokerest.pokerest.dtos.Pokemon;
+import br.com.pokerest.pokerest.dtos.Statistics;
 import br.com.pokerest.pokerest.repository.PokemonRepository;
 import lombok.RequiredArgsConstructor;
 
@@ -40,5 +40,13 @@ public class PokeService {
                 .orElseThrow(() -> new RuntimeException("Couldn't find glass cannons within bounds."));
     }
 
+    public Statistics getStatistics(List<String> types) {
+       List<Pokemon> pokemons = pokemonRepository.findAllWithTypes(types).get();
+       return PokeService.computeStatisticsForPokemons(pokemons);
+    }
 
+    private static Statistics computeStatisticsForPokemons(List<Pokemon> pokemons) {
+
+        return new Statistics();
+    }
 }

@@ -63,13 +63,38 @@ Exemplo de retorno:
 
 ---
 
-Cada **estatística** contém os campos seguintes:
+Cada **Estatística** contém os campos seguintes:
 
 > Em caso de múltiplos tipos, as estatísticas de cada tipo passado serão agregadas.
 
 ```JS
 {
-    "preecher aqui",  //
+    "type",                        // Tipo do Pokémon (ex: "fire", "water")
+    "total_pokemons",              // Quantidade total de Pokémon deste tipo
+    "avg_bst",                     // Média do Base Stat Total (soma de todos os atributos base)
+    "max_bst",                     // Maior BST encontrado no tipo
+    "min_bst",                     // Menor BST encontrado no tipo
+    "avg_speed",                   // Velocidade média
+    "fast_count",                  // Quantidade de Pokémon rápidos (speed >= 100)
+    "medium_speed_count",          // Quantidade com velocidade média (60 <= speed < 100)
+    "slow_count",                  // Quantidade de Pokémon lentos (speed < 60)
+    "avg_physical_attack",         // Média de ataque físico
+    "avg_special_attack",          // Média de ataque especial
+    "avg_defense",                 // Média de defesa
+    "avg_sp_defense",              // Média de defesa especial
+    "physical_bias_ratio",         // Razão entre ataque físico e especial (attack / sp_attack)
+    "bulk_ratio",                  // Indicador de resistência ((defense + sp_defense) / hp)
+    "physical_sweepers",           // Pokémon com alto ataque físico e alta velocidade
+    "special_sweepers",            // Pokémon com alto ataque especial e alta velocidade
+    "tanks",                       // Pokémon com bons stats defensivos e HP alto
+    "walls",                       // Pokémon muito defensivos e lentos
+    "balanced",                    // Pokémon que não se encaixam nas categorias acima
+    "legendary_count",             // Quantidade de lendários
+    "legendary_avg_bst",           // Média de BST apenas entre lendários
+    "avg_abilities_per_pokemon",   // Média de habilidades por Pokémon
+    "dual_type_count",             // Quantidade de Pokémon com tipo secundário
+    "avg_weakness_count",          // Média de fraquezas (requer cálculo com tabela de tipos)
+    "avg_resistance_count"         // Média de resistências (requer cálculo com tabela de tipos)
 }
 ```
 
